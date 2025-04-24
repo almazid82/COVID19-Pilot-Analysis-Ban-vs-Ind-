@@ -161,6 +161,79 @@ GROUP BY location;
 
 
 ---
+## Data Visualization
+
+```python
+import matplotlib.pyplot as plt
+
+# 1. Daily New Cases in Bangladesh (May–June 2020)
+bd_cases = df[(df['location'] == 'Bangladesh') & 
+              (df['date'] >= '2020-05-01') & 
+              (df['date'] <= '2020-06-30')]
+
+plt.figure(figsize=(10,5))
+plt.plot(bd_cases['date'], bd_cases['new_cases'], label='New Cases')
+plt.xticks(rotation=45)
+plt.title('Daily New COVID-19 Cases in Bangladesh (May–June 2020)')
+plt.xlabel('Date')
+plt.ylabel('New Cases')
+plt.legend()
+plt.tight_layout()
+plt.show()
+```
+
+**Explanation:**  
+এই visualization টি বাংলাদেশে মে থেকে জুন পর্যন্ত নতুন কেসের দৈনিক প্রবণতা দেখায়। সময় অনুযায়ী ট্রেন্ড বোঝার জন্য খুব কার্যকর।
+
+---
+
+## Key Insights
+
+- **Bangladesh:** মে ও জুনে দৈনিক কেস বৃদ্ধি পেয়েছে, তবে জুনের শেষদিকে কিছুটা স্থিরতা লক্ষ্য করা যায়।
+- **India:** মে মাসে গড় দৈনিক কেস ছিল ৬ হাজারের বেশি, যা সেসময়ের জন্য গুরুত্বপূর্ণ public health concern ছিল।
+- **Mortality Rate:** বেশিরভাগ দেশে প্রতি ১ লাখ জনসংখ্যায় মৃত্যুর হার কম থাকলেও কিছু দেশে তা তুলনামূলকভাবে বেশি।
+
+---
+
+## Future Scope / Applicability
+
+- **AI-driven Alert System:** এমন ডেটার উপর ভিত্তি করে future outbreaks শনাক্ত করতে predictive AI মডেল বানানো যেতে পারে।
+- **Bangladesh Context:** স্বাস্থ্য মন্ত্রণালয় চাইলে AI ভিত্তিক local outbreak tracking system তৈরি করতে পারে যা সময়মতো hotspot ধরতে পারবে।
+- **Policy Making:** এই ডেটা এনালাইসিস policymaker দের জন্য গুরুত্বপূর্ণ সিদ্ধান্ত নেয়ার ভিত্তি হিসেবে কাজ করতে পারে (যেমন, কোন জেলায় আগে lockdown প্রযোজ্য)।
+
+---
+
+## Repository Structure
+
+```
+├── data/
+│   └── covid_data.csv
+├── notebooks/
+│   └── pilot_analysis.ipynb
+├── README.md
+└── requirements.txt
+```
+
+---
+
+## How to Run
+
+1. Clone the repo  
+   `git clone https://github.com/yourusername/covid19-pilot-analysis.git`
+
+2. Install dependencies  
+   `pip install -r requirements.txt`
+
+3. Run the notebook  
+   Open `pilot_analysis.ipynb` in Jupyter or VS Code.
+
+---
+
+## Author
+
+- **Your Name:** [Shamsul Al Mazid]
+- **Project:** COVID-19 Pilot Data Analysis (Bangladesh & India)
+
 
 :computer: Technologies Used
 
