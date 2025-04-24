@@ -1,4 +1,5 @@
 # COVID-19 Pilot Analysis Project: Bangladesh & India (Jan–Jun 2020)
+
 p align="center">
   <img src="https://github.com/almazid82/COVID19-Pilot-Analysis-Ban-vs-Ind-/blob/main/Screenshot_20250424-202036~2.png?raw=true" width="600" alt="COVID-19 Comparison Chart" />
 </p>
