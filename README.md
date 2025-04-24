@@ -1,5 +1,12 @@
 # COVID-19 Pilot Analysis Project: Bangladesh & India (Jan–Jun 2020)
 
+## Dataset Source
+
+The dataset used for this analysis is publicly available from **Our World in Data**:
+
+[COVID-19 Dataset (OWID)](https://covid.ourworldindata.org/data/owid-covid-data.csv)
+
+
 A focused exploratory data analysis (EDA) on COVID-19 data for **Bangladesh** and **India**, using both **Python (Pandas/Matplotlib)** and **SQL**. This pilot aims to lay the groundwork for larger-scale global analysis.
 
 ---
