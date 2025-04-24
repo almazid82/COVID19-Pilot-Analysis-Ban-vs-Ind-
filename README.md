@@ -50,6 +50,25 @@ COVID19-Pilot-Analysis/ ├── data/ │   └── pilot_covid_data_banglad
 
 **Sample SQL Queries:**
 
+```sql
+-- 1. Total Cases in Bangladesh (as of June 2020)
+SELECT MAX(total_cases) AS total_cases_bangladesh
+FROM covid_data
+WHERE location = 'Bangladesh';
+
+-- 2. Average New Cases in India (May 2020)
+SELECT AVG(new_cases) AS avg_new_cases_may
+FROM covid_data
+WHERE location = 'India'
+  AND date BETWEEN '2020-05-01' AND '2020-05-31';
+
+-- 3. Total Deaths per 100,000 Population
+SELECT location,
+       MAX(total_deaths) * 100000.0 / MAX(population) AS deaths_per_100k
+FROM covid_data
+GROUP BY location;
+```
+
 1. **Total Cases in Bangladesh (as of June 2020):**
    ```sql
    SELECT MAX(total_cases) AS total_cases_bangladesh
