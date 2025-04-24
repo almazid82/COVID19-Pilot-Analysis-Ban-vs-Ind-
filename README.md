@@ -1,46 +1,35 @@
 # COVID-19 Pilot Analysis Project: Bangladesh & India (Jan–Jun 2020)
 
-## Dataset Source
-
-The dataset used for this analysis is publicly available from **Our World in Data**:
-
-[COVID-19 Dataset (OWID)](https://covid.ourworldindata.org/data/owid-covid-data.csv)
 
 
-A focused exploratory data analysis (EDA) on COVID-19 data for **Bangladesh** and **India**, using both **Python (Pandas/Matplotlib)** and **SQL**. This pilot aims to lay the groundwork for larger-scale global analysis.
+## :mag_right: Uncovering Early Pandemic Patterns in South Asia
 
----
+In early 2020, COVID-19 began to spread rapidly across the globe. Governments were scrambling to understand the virus, track its movement, and respond effectively. This project zooms in on two densely populated South Asian countries — **Bangladesh** and **India** — to understand how the pandemic unfolded during its initial phase (January–June 2020).
 
-## :bar_chart: Project Objectives
-
-- Conduct a pilot analysis using a subset of global COVID-19 data
-- Compare COVID-19 trends in Bangladesh and India (new cases, deaths, etc.)
-- Practice SQL-based data analysis for scalable applications
-- Use Python for visualization and trend analysis
-- Build a structured, reusable data science workflow
+By performing a focused **Exploratory Data Analysis (EDA)** using **Python** and **SQL**, this pilot lays the foundation for future large-scale and AI-driven epidemic monitoring systems.
 
 ---
 
-## :file_folder: Folder Structure
+## :bar_chart: Objectives of This Pilot Study
 
-COVID19-Pilot-Analysis/ ├── data/ │   └── pilot_covid_data_bangladesh_india.csv ├── scripts/ │   ├── covid_analysis_python.ipynb │   └── sql_queries.sql ├── visuals/ │   └── trend_charts.png ├── README.md └── .gitignore
+- Conduct a country-specific pilot analysis using a global dataset.
+- Identify early trends in infections and deaths across **Bangladesh** and **India**.
+- Compare key metrics using both SQL and Python-based methods.
+- Visualize outbreak dynamics and mortality patterns.
+- Prepare a reusable template for future global or regional analyses.
 
 ---
 
-## :bar_chart: Dataset Details
+## :floppy_disk: Dataset Information
 
-- **Name:** pilot_covid_data_bangladesh_india.csv  
-- **Source:** Derived from OWID Global COVID-19 dataset  
-- **Time Range:** January to June 2020  
-- **Countries:** Bangladesh and India only  
-- **Key Columns:**  
-  - `date`  
-  - `location`  
-  - `new_cases`  
-  - `new_deaths`  
-  - `total_cases`  
-  - `total_deaths`  
-  - `population`
+- **Dataset Source:** [Our World in Data (OWID)](https://covid.ourworldindata.org/data/owid-covid-data.csv)  
+- **Filtered for:** Bangladesh & India  
+- **Date Range:** January to June 2020  
+- **Key Variables:**
+  - `date`, `location`, `new_cases`, `total_cases`
+  - `new_deaths`, `total_deaths`, `population`
+
+
 
 ---
 
