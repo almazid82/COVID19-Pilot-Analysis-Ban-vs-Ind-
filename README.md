@@ -37,7 +37,7 @@ COVID19-Pilot-Analysis/ ├── data/ │   └── pilot_covid_data_banglad
 
 ---
 
-## :snake: Python-Based Analysis (scripts/covid_analysis_python.ipynb)
+## :snake: Python-Based Analysis with explanation (scripts/covid_analysis_python.ipynb)
 
 - Filtering and comparing country-wise case growth
 - Monthly average new cases and deaths
@@ -45,6 +45,59 @@ COVID19-Pilot-Analysis/ ├── data/ │   └── pilot_covid_data_banglad
 - Anomaly detection and pattern observation
 
 ---
+
+```python
+# 1. Total Cases in Bangladesh (as of June 2020)
+import pandas as pd
+
+df = pd.read_csv("covid_data.csv")
+bd_total_cases = df[df['location'] == 'Bangladesh']['total_cases'].max()
+print("Total Cases in Bangladesh:", bd_total_cases)
+```
+
+**Explanation:**  
+এই কোডটি pandas দিয়ে CSV ডেটাসেট লোড করে এবং বাংলাদেশের সর্বোচ্চ মোট কেস বের করে। SQL এর প্রথম কোয়েরির মতোই কাজ করে, তবে Python দিয়ে।  
+**Expected Output (example):**  
+`Total Cases in Bangladesh: 47153`
+
+---
+
+```python
+# 2. Average New Cases in India (May 2020)
+india_may = df[(df['location'] == 'India') & 
+               (df['date'] >= '2020-05-01') & 
+               (df['date'] <= '2020-05-31')]
+avg_new_cases = india_may['new_cases'].mean()
+print("Average New Cases in India (May 2020):", avg_new_cases)
+```
+
+**Explanation:**  
+এই অংশে India-র মে ২০২০ সালের নতুন কেস গুলো ফিল্টার করে তাদের গড় হিসাব করা হয়েছে। এটা SQL এর দ্বিতীয় কোয়েরির মতো।  
+**Expected Output (example):**  
+`Average New Cases in India (May 2020): 6360.84`
+
+---
+
+```python
+# 3. Total Deaths per 100,000 Population
+df_grouped = df.groupby('location').agg({
+    'total_deaths': 'max',
+    'population': 'max'
+})
+df_grouped['deaths_per_100k'] = df_grouped['total_deaths'] * 100000 / df_grouped['population']
+print(df_grouped[['deaths_per_100k']].head())
+```
+
+**Explanation:**  
+এই অংশে প্রতিটি দেশের জন্য সর্বোচ্চ মৃত্যু সংখ্যা এবং জনসংখ্যা নিয়ে ১ লাখ জনে কতজন মারা গেছে তার হার বের করা হয়েছে। SQL এর তৃতীয় কোয়েরির মতোই কাজ করে।  
+**Expected Output (example):**
+
+| location   | deaths_per_100k |
+|------------|------------------|
+| Bangladesh | 0.83             |
+| India      | 1.91             |
+| ...        | ...              |
+
 
 ## :floppy_disk: SQL-Based Analysis (scripts/sql_queries.sql)
 
