@@ -48,26 +48,61 @@ COVID19-Pilot-Analysis/ ├── data/ │   └── pilot_covid_data_banglad
 
 ## :floppy_disk: SQL-Based Analysis (scripts/sql_queries.sql)
 
-**Sample SQL Queries:**
+
+
+## Sample SQL Queries with Explanation
 
 ```sql
 -- 1. Total Cases in Bangladesh (as of June 2020)
 SELECT MAX(total_cases) AS total_cases_bangladesh
 FROM covid_data
 WHERE location = 'Bangladesh';
+```
 
+**Explanation:**  
+এই কোয়েরিটি বাংলাদেশের সর্বোচ্চ মোট কেস (total_cases) কত ছিল সেটা বের করে দিবে। যেহেতু ডেটা আপডেটেড থাকে, তাই সর্বশেষ তারিখ অনুযায়ী সর্বোচ্চ সংখ্যাটি পাওয়া যাবে।  
+**Expected Output (example):**  
+| total_cases_bangladesh |
+|------------------------|
+| 47153                  |
+
+---
+
+```sql
 -- 2. Average New Cases in India (May 2020)
 SELECT AVG(new_cases) AS avg_new_cases_may
 FROM covid_data
 WHERE location = 'India'
   AND date BETWEEN '2020-05-01' AND '2020-05-31';
+```
 
+**Explanation:**  
+এই কোয়েরিটি ২০২০ সালের মে মাসে ভারতের দৈনিক গড় নতুন কেস (average new cases) বের করে। এটি সময়ভিত্তিক বিশ্লেষণে সহায়ক।  
+**Expected Output (example):**  
+| avg_new_cases_may |
+|-------------------|
+| 6360.84           |
+
+---
+
+```sql
 -- 3. Total Deaths per 100,000 Population
 SELECT location,
        MAX(total_deaths) * 100000.0 / MAX(population) AS deaths_per_100k
 FROM covid_data
 GROUP BY location;
 ```
+
+**Explanation:**  
+এই কোয়েরিটি প্রতিটি দেশের প্রতি ১ লাখ জনসংখ্যায় মোট মৃত্যুর সংখ্যা কত সেটি বের করে। জনসংখ্যা অনুপাতে মৃত্যুর হারের তুলনা করতে খুবই কার্যকর।  
+**Expected Output (example):**  
+| location   | deaths_per_100k |
+|------------|------------------|
+| Bangladesh | 0.83             |
+| India      | 1.91             |
+| ...        | ...              |
+
+
 
 
 
