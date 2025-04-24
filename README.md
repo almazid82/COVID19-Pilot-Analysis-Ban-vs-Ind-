@@ -57,6 +57,7 @@ COVID19-Pilot-Analysis/ ├── data/ │   └── pilot_covid_data_banglad
    WHERE location = 'Bangladesh';
 ___
 2. **Average New Cases in India (May 2020):**
+
 ```sql
 SELECT AVG(new_cases) AS avg_new_cases_may
 FROM covid_data
@@ -65,6 +66,7 @@ WHERE location = 'India'
 ___
 
 3. **Total Deaths per 100,000 Population:**
+
 ```sql
 SELECT location,
        MAX(total_deaths) * 100000.0 / MAX(population) AS deaths_per_100k
