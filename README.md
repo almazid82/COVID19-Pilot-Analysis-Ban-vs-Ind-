@@ -69,29 +69,6 @@ FROM covid_data
 GROUP BY location;
 ```
 
-1. **Total Cases in Bangladesh (as of June 2020):**
-   ```sql
-   SELECT MAX(total_cases) AS total_cases_bangladesh
-   FROM covid_data
-   WHERE location = 'Bangladesh';
-___
-2. **Average New Cases in India (May 2020):**
-
-sql
-SELECT AVG(new_cases) AS avg_new_cases_may
-FROM covid_data
-WHERE location = 'India'
-  AND date BETWEEN '2020-05-01' AND '2020-05-31';
-___
-
-3. **Total Deaths per 100,000 Population:**
-
-sql
-SELECT location,
-       MAX(total_deaths) * 100000.0 / MAX(population) AS deaths_per_100k
-FROM covid_data
-GROUP BY location;
-
 
 
 
