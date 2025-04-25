@@ -1,4 +1,7 @@
 # COVID-19 Pilot Analysis Project: Bangladesh & India (Jan–Jun 2020)
+ ![Python](https://img.shields.io/badge/-Python-3670A0?style=flat-square&logo=python&logoColor=white)
+  ![Data Analysis](https://img.shields.io/badge/-Data_Analysis-teal?style=flat-square)
+
 
 
   <img src="https://github.com/almazid82/COVID19-Pilot-Analysis-Ban-vs-Ind-/blob/main/Screenshot_20250424-202036~2.png?raw=true" width="600" alt="COVID-19 Comparison Chart" />
