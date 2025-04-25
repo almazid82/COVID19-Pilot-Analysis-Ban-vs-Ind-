@@ -263,13 +263,21 @@ Integrate COVID-19 policy and mobility data for deeper insights
 
 Build interactive dashboard (Power BI / Tableau)
 
+___
+
+
+## 🔗 Related Projects
+- [Global Temperature HeatMap Analysis](https://github.com/almazid82/HeatMap-Understanding-Global-Temperature-Anomalies)
 
 
 ---
 
-:handshake: Contributing
 
-This is an open-source educational project. Contributions, improvements, and suggestions are always welcome!
+
+## ⭐ Feedback
+If you like this project or have suggestions, feel free to star the repo or open an issue. Your feedback is valuable!
+
+
 
 
 ---
